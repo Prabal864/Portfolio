@@ -41,6 +41,8 @@ import redis from "./tech/redis.png";
 import postgresql from "./tech/postgresql.png";
 import DynamoDB from "./tech/DynamoDB.png";
 import techeazy from "./company/techeazy.png";
+import liverecondemo from "./liverecondemo.mp4";
+import profilepic from "./profilepic.png";
 
 export {
   logo,
@@ -83,4 +85,6 @@ export {
   postgresql,
   DynamoDB,
   techeazy,
+  liverecondemo,
+  profilepic,
 };

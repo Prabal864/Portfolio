@@ -26,6 +26,8 @@ export type TProject = {
   }[];
   image: string;
   sourceCodeLink: string;
+  liveLink?: string;
+  demo?: string;
 } & Required<Pick<TCommonProps, "name">>;
 
 export type TTechnology = Required<Omit<TCommonProps, "title">>;
@@ -34,7 +36,7 @@ export type TNavLink = {
   id: string;
 } & Required<Pick<TCommonProps, "title">>;
 
-export type TService = Required<Omit<TCommonProps, "name">>;
+export type TService = Required<Omit<TCommonProps, "name">> & { description: string };
 
 export type TMotion = {
   direction: "up" | "down" | "left" | "right" | "";

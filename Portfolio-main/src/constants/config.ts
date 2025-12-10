@@ -36,18 +36,19 @@ type TConfig = {
     feedbacks: TSection;
     works: Required<TSection>;
     resume: Required<TSection>;
+    tech: TSection;
   };
 };
 
 export const config: TConfig = {
   html: {
-    title: "Prabal Pratap Singh Portfolio",
+    title: "",
     fullName: "Prabal Pratap Singh",
     email: "prabal.singh0214@gmail.com",
   },
   hero: {
     name: "Prabal Pratap Singh",
-    p: ["I build scalable backend systems", "and cloud-native microservices"],
+    p: ["Architecting Scalable Backend Systems", "Developing Cloud-Native Microservices", "Building Secure Fintech Solutions", "Optimizing High-Performance APIs"],
   },
   contact: {
     p: "Get in touch",
@@ -68,10 +69,10 @@ export const config: TConfig = {
     about: {
       p: "Introduction",
       h2: "Overview.",
-      content: `I am a Backend & Cloud Developer specializing in Java Spring Boot, Microservices, and DevOps. I build scalable, production-ready systems using Spring Cloud, Kafka, Kubernetes, Docker, and AWS/GCP. My experience includes delivering fintech and logistics platforms with secure APIs, async communication, and cloud-first architectures. I’ve also built AI-driven solutions integrating SETU Account Aggregator and LLMs for real-time financial insights. I focus on creating systems that are fast, reliable, and optimized for scale.`,
+      content: `I am a results-driven Backend & Cloud Developer specializing in Java Spring Boot, Microservices, and DevOps. I engineer scalable, production-ready systems using Spring Cloud, Kafka, Kubernetes, Docker, and AWS/GCP. My expertise lies in delivering robust fintech and logistics platforms featuring secure APIs, asynchronous communication, and cloud-first architectures. I also pioneer AI-driven solutions, integrating SETU Account Aggregator and LLMs to generate real-time financial insights. My focus is on building systems that are not just functional, but fast, reliable, and built to scale.`,
     },
     experience: {
-      p: "What I have done so far",
+      p: "My Professional Journey",
       h2: "Work Experience.",
     },
     feedbacks: {
@@ -81,16 +82,17 @@ export const config: TConfig = {
     works: {
       p: "My work",
       h2: "Projects.",
-      content: `Following projects showcases my skills and experience through
-    real-world examples of my work. Each project is briefly described with
-    links to code repositories and live demos in it. It reflects my
-    ability to solve complex problems, work with different technologies,
-    and manage projects effectively.`,
+      content: `The following projects demonstrate my technical expertise and problem-solving capabilities through real-world examples. Each project is briefly described, including links to code repositories and live demos, showcasing my ability to tackle complex challenges, leverage diverse technologies, and deliver effective solutions.`,
     },
     resume: {
       p: "My Professional Background",
       h2: "Resume.",
       content: `Download my comprehensive resume showcasing my technical skills, work experience, and achievements in backend development, cloud architecture, and DevOps.`,
+    },
+    tech: {
+      p: "MY ARSENAL",
+      h2: "Tech Stack.",
+      content: `I leverage a robust set of modern technologies to build scalable, high-performance applications. My expertise spans across backend development, cloud infrastructure, and DevOps practices, ensuring end-to-end delivery of secure and efficient solutions.`,
     },
   },
 };

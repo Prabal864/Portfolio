@@ -6,7 +6,6 @@ import { EarthCanvas } from "../canvas";
 import { SectionWrapper } from "../../hoc";
 import { slideIn } from "../../utils/motion";
 import { config } from "../../constants/config";
-import { Header } from "../atoms/Header";
 
 const INITIAL_STATE = Object.fromEntries(
   Object.keys(config.contact.form).map((input) => [input, ""])
@@ -71,9 +70,14 @@ const Contact = () => {
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="bg-white dark:bg-black-100 border border-gray-200 dark:border-none flex-[0.75] rounded-2xl p-8 shadow-xl"
+        className="card-gradient flex-[0.75] rounded-2xl p-8"
       >
-        <Header useMotion={false} {...config.contact} />
+        <p className="text-[18px] text-secondary uppercase tracking-wider">
+          {config.contact.p}
+        </p>
+        <h3 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+          <span className="text-gradient">{config.contact.h2}</span>
+        </h3>
 
         <form
           // @ts-expect-error
@@ -88,14 +92,14 @@ const Contact = () => {
 
             return (
               <label key={input} className="flex flex-col">
-                <span className="mb-4 font-medium text-gray-800 dark:text-white">{span}</span>
+                <span className="mb-4 font-medium text-white">{span}</span>
                 <Component
                   type={input === "email" ? "email" : "text"}
                   name={input}
                   value={form[`${input}`]}
                   onChange={handleChange}
                   placeholder={placeholder}
-                  className="bg-gray-50 dark:bg-tertiary placeholder:text-gray-400 dark:placeholder:text-secondary border border-gray-200 dark:border-none rounded-lg px-6 py-4 font-medium text-gray-800 dark:text-white outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-200 dark:focus:ring-0 dark:focus:border-none"
+                  className="bg-[#020202] placeholder:text-secondary border border-[#1f1f1f] rounded-lg px-6 py-4 font-medium text-white outline-none focus:border-white transition-colors"
                   {...(input === "message" && { rows: 7 })}
                 />
               </label>
@@ -103,7 +107,7 @@ const Contact = () => {
           })}
           <button
             type="submit"
-            className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 dark:bg-tertiary dark:shadow-primary w-fit rounded-xl px-8 py-3 font-bold text-white shadow-lg dark:shadow-md outline-none transition-all hover:scale-105"
+            className="bg-white text-black w-fit rounded-xl px-8 py-3 font-bold shadow-md outline-none transition-all hover:bg-gray-200"
           >
             {loading ? "Sending..." : "Send"}
           </button>

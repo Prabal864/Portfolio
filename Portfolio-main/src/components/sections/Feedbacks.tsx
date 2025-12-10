@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { styles } from "../../constants/styles";
 import { fadeIn } from "../../utils/motion";
 import { testimonials } from "../../constants";
-import { Header } from "../atoms/Header";
 import { TTestimonial } from "../../types";
 import { config } from "../../constants/config";
 
@@ -17,19 +16,19 @@ const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
 }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className="bg-white dark:bg-black-200 border border-gray-200 dark:border-none xs:w-[320px] w-full rounded-3xl p-10 shadow-xl"
+    className="card-gradient xs:w-[320px] w-full rounded-3xl p-10"
   >
-    <p className="text-[48px] font-black text-purple-500 dark:text-white">"</p>
+    <p className="text-[48px] font-black text-white">"</p>
 
     <div className="mt-1">
-      <p className="text-[18px] tracking-wider text-gray-700 dark:text-white">{testimonial}</p>
+      <p className="text-[18px] tracking-wider text-white">{testimonial}</p>
 
       <div className="mt-7 flex items-center justify-between gap-1">
         <div className="flex flex-1 flex-col">
-          <p className="text-[16px] font-medium text-gray-800 dark:text-white">
-            <span className="text-blue-500 dark:blue-text-gradient">@</span> {name}
+          <p className="text-[16px] font-medium text-white">
+            <span className="text-gray-500">@</span> {name}
           </p>
-          <p className="text-gray-600 dark:text-secondary mt-1 text-[12px]">
+          <p className="text-secondary mt-1 text-[12px]">
             {designation} of {company}
           </p>
         </div>
@@ -46,11 +45,18 @@ const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
 
 const Feedbacks = () => {
   return (
-    <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:bg-black-100 mt-12 rounded-[20px] p-1">
+    <div className="mt-12 rounded-[20px]">
       <div
-        className={`${styles.padding} bg-white dark:bg-tertiary min-h-[300px] rounded-2xl`}
+        className={`${styles.padding} min-h-[300px] rounded-2xl`}
       >
-        <Header useMotion={true} {...config.sections.feedbacks} />
+        <div className="mb-12">
+          <p className="text-[18px] text-secondary uppercase tracking-wider">
+            {config.sections.feedbacks.p}
+          </p>
+          <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+            <span className="text-gradient">{config.sections.feedbacks.h2}</span>
+          </h2>
+        </div>
       </div>
       <div
         className={`${styles.paddingX} -mt-20 flex flex-wrap gap-7 pb-14 max-sm:justify-center`}

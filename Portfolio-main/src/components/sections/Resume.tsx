@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
 import { SectionWrapper } from "../../hoc";
-import { fadeIn, textVariant, zoomIn } from "../../utils/motion";
+import { fadeIn, zoomIn } from "../../utils/motion";
 import { config } from "../../constants/config";
 
 const RESUME_PDF_PATH = "/Prabal_CV_compressed.pdf";
@@ -57,21 +57,11 @@ const Resume = () => {
 
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className="text-gray-600 dark:text-secondary sm:text-[18px] text-[14px] uppercase tracking-wider">
-          {config.sections.resume.p}
-        </p>
-        <h2 className="text-gray-800 dark:text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
-          {config.sections.resume.h2}
-        </h2>
-      </motion.div>
+      <div>
+        <h1 className="text-gradient" style={{ fontSize: '3.5rem', fontWeight: 900, textAlign: 'center', marginBottom: '1.2em' }}>{config.sections.resume.h2}</h1>
+      </div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="text-gray-700 dark:text-secondary mt-4 max-w-3xl text-[17px] leading-[30px]"
-      >
-        {config.sections.resume.content}
-      </motion.p>
+      {/* Removed resume paragraph for cleaner look */}
 
       {/* Tab Navigation */}
       <motion.div
@@ -83,7 +73,7 @@ const Resume = () => {
           className={`flex items-center gap-2 rounded-lg px-6 py-3 font-bold transition-all ${
             activeTab === "preview"
               ? "bg-gradient-to-r from-purple-500 to-pink-500 dark:green-pink-gradient text-white shadow-lg scale-105"
-              : "bg-white dark:bg-tertiary border border-gray-200 dark:border-none text-gray-600 dark:text-secondary hover:text-gray-800 dark:hover:text-white shadow-md"
+              : "bg-[#18181b] border border-[#333] text-white hover:text-neon-blue shadow-md"
           }`}
         >
           <svg
@@ -113,7 +103,7 @@ const Resume = () => {
           className={`flex items-center gap-2 rounded-lg px-6 py-3 font-bold transition-all ${
             activeTab === "download"
               ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg scale-105"
-              : "bg-white border border-gray-200 text-gray-600 hover:text-gray-800 shadow-md"
+              : "bg-[#18181b] border border-[#333] text-white hover:text-neon-blue shadow-md"
           }`}
         >
           <svg
@@ -153,13 +143,13 @@ const Resume = () => {
               glareColor="#e0e7ff"
               glareMaxOpacity={0.2}
             >
-              <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-[20px] p-[3px] shadow-xl">
-                <div className="bg-white relative overflow-hidden rounded-[18px]">
+              <div className="bg-gradient-to-br from-[#18181b] to-[#22223b] rounded-[20px] p-[3px] shadow-xl">
+                <div className="bg-[#18181b] relative overflow-hidden rounded-[18px]">
                   {/* Animated Background Pattern */}
                   <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-0 -left-4 h-72 w-72 rounded-full bg-purple-500 mix-blend-multiply filter blur-xl animate-blob"></div>
-                    <div className="absolute top-0 -right-4 h-72 w-72 rounded-full bg-pink-500 mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
-                    <div className="absolute -bottom-8 left-20 h-72 w-72 rounded-full bg-blue-500 mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+                    <div className="absolute top-0 -left-4 h-72 w-72 rounded-full bg-neon-blue/20 mix-blend-multiply filter blur-xl animate-blob"></div>
+                    <div className="absolute top-0 -right-4 h-72 w-72 rounded-full bg-neon-blue/10 mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+                    <div className="absolute -bottom-8 left-20 h-72 w-72 rounded-full bg-neon-blue/10 mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
                   </div>
 
                   {/* PDF Container */}
@@ -216,7 +206,7 @@ const Resume = () => {
                     </div>
 
                     {/* PDF Viewer */}
-                    <div className="relative h-[750px] overflow-hidden bg-gray-50">
+                    <div className="relative h-[750px] overflow-hidden bg-[#111]">
                       <iframe
                         src={RESUME_PDF_PATH}
                         className="h-full w-full"
@@ -248,8 +238,8 @@ const Resume = () => {
                 className="md:col-span-2 lg:col-span-2"
               >
                 <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10}>
-                  <div className="bg-gradient-to-br from-purple-100 to-pink-100 shadow-xl rounded-[20px] p-[1px]">
-                    <div className="bg-white flex flex-col gap-6 rounded-[20px] p-8">
+                  <div className="bg-gradient-to-br from-[#18181b] to-[#22223b] shadow-xl rounded-[20px] p-[1px]">
+                    <div className="bg-[#18181b] flex flex-col gap-6 rounded-[20px] p-8">
                       <div className="flex items-start gap-6">
                         <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 shadow-lg">
                           <svg
@@ -338,7 +328,7 @@ const Resume = () => {
                 className="flex flex-col gap-6"
               >
                 <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10}>
-                  <div className="bg-white border border-gray-200 flex items-center gap-4 rounded-xl p-6 transition-all hover:border-purple-300 shadow-md">
+                  <div className="bg-[#18181b] border border-[#333] flex items-center gap-4 rounded-xl p-6 transition-all hover:border-neon-blue shadow-md">
                     <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-500">
                       <svg
                         className="h-8 w-8 text-white"
@@ -367,7 +357,7 @@ const Resume = () => {
                 </Tilt>
 
                 <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10}>
-                  <div className="bg-white border border-gray-200 flex items-center gap-4 rounded-xl p-6 transition-all hover:border-purple-300 shadow-md">
+                  <div className="bg-[#18181b] border border-[#333] flex items-center gap-4 rounded-xl p-6 transition-all hover:border-neon-blue shadow-md">
                     <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-purple-500">
                       <svg
                         className="h-8 w-8 text-white"
@@ -407,11 +397,11 @@ const Resume = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex flex-col bg-white"
+            className="fixed inset-0 z-50 flex flex-col bg-[#18181b]"
             onClick={toggleFullscreen}
           >
             {/* Header with Glassmorphism */}
-            <div className="flex items-center justify-between border-b border-gray-200 bg-white/95 p-4 backdrop-blur-md shadow-md">
+            <div className="flex items-center justify-between border-b border-[#333] bg-[#18181b]/95 p-4 backdrop-blur-md shadow-md">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-500">
                   <svg
@@ -444,7 +434,7 @@ const Resume = () => {
                     e.stopPropagation();
                     handleDownload(e);
                   }}
-                  className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 flex items-center gap-2 rounded-lg px-4 py-2 font-medium text-white transition-all hover:scale-105"
+                  className="bg-gradient-to-r from-neon-blue to-neon-blue/80 hover:from-neon-blue/80 hover:to-neon-blue flex items-center gap-2 rounded-lg px-4 py-2 font-medium text-white transition-all hover:scale-105"
                 >
                   <svg
                     className="h-5 w-5"
@@ -464,7 +454,7 @@ const Resume = () => {
                 </button>
                 <button
                   onClick={toggleFullscreen}
-                  className="flex items-center gap-2 rounded-lg bg-gray-100 hover:bg-gray-200 p-2 text-gray-700 transition-all hover:scale-110"
+                  className="flex items-center gap-2 rounded-lg bg-[#222] hover:bg-neon-blue/20 p-2 text-white transition-all hover:scale-110"
                   title="Close Fullscreen"
                 >
                   <svg
@@ -490,7 +480,7 @@ const Resume = () => {
             >
               <iframe
                 src={RESUME_PDF_PATH}
-                className="h-full w-full rounded-lg shadow-2xl"
+                className="h-full w-full rounded-lg shadow-2xl bg-[#111]"
                 title="Resume Fullscreen Preview"
                 onError={(e) => {
                   console.error("Failed to load resume PDF in fullscreen:", e);
